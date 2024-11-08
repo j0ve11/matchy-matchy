@@ -7,6 +7,7 @@ from werkzeug.utils import secure_filename
 import base64
 from PIL import Image
 import io
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 app = Flask(__name__)
 
