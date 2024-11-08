@@ -84,7 +84,7 @@ def preprocess_image(image_path):
     img_array = img_array / 255.0  # Normalize image
     return img_array
 
-@app.route('/')
+@app.route('/templates')
 def home():
     return render_template('index.html')
 
