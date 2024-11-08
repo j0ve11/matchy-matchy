@@ -92,12 +92,12 @@ def home():
 def upload():
     if 'file' not in request.files:
         print("Error: No file part in the request")
-        return jsonify({'error': 'No file part'}), 500
+        return jsonify({'error': 'No file part'}), 400
     
     file = request.files['file']
     if file.filename == '':
         print("Error: No file selected")
-        return jsonify({'error': 'No selected file'}), 500
+        return jsonify({'error': 'No selected file'}), 400
     
     if file and allowed_file(file.filename):
         filename = secure_filename(file.filename)
@@ -110,7 +110,7 @@ def upload():
         img_array = preprocess_image(file_path)  # Replace with your preprocessing function
         if img_array is None:
             print("Error during image preprocessing")
-            return jsonify({'error': 'Image processing failed'}), 500
+            return jsonify({'error': 'Image processing failed'}), 400
         
         predictions = model.predict(img_array)
         predicted_class = skin_tone_categories[np.argmax(predictions)]
@@ -128,7 +128,7 @@ def upload():
         return jsonify(response)
 
     print("Error: Invalid file type")
-    return jsonify({'error': 'Invalid file type'}), 500
+    return jsonify({'error': 'Invalid file type'}), 400
 
 if __name__ == '__main__':
     app.run(debug=True)
