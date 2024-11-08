@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matchy-Matchy!</title>
+    <link rel="stylesheet" href="static/style.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Matchy-Matchy!</h1>
+        <div class="upload-section">
+            <input type="file" id="file-input" accept="image/*">
+            <button id="upload-btn">Upload</button>
+        </div>
+        <div id="result" class="result-section">
+            <h4>Upload Your Image for Skin Tone Prediction & Makeup Base Recommendations</h4>
+            <!-- This will display the result after the upload -->
+            <img id="uploaded-image" src="" alt="Uploaded Image" style="max-width: 100%; display: none;">
+        </div>
+    </div>
+
+    <!-- Link to the external JS file in the static folder -->
+    <script src="static/script.js"></script>
+</body>
+</html>
